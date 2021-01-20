@@ -6,63 +6,62 @@ $sid=$_SESSION['userId'];?>
 <head>
 <style>
 
+    table,tr,td{
+      border:1px solid black ;
+      border-collapse: collapse;
+      width:900px;
+      margin-left:auto;
+      margin-right:auto;
+      text-align:center;
+      padding:10px 3px;
+    }
 
-table,tr,td{
-  border:1px solid black ;
-  border-collapse: collapse;
-  width:900px;
-  margin-left:auto;
-  margin-right:auto;
-  text-align:center;
-  padding:10px 3px;
-}
+    .txt-center {
+      text-align: center;
+    }
+    .hide {
+      display: none;
+    }
 
-.txt-center {
-  text-align: center;
-}
-.hide {
-  display: none;
-}
+    .clear {
+      float: none;
+      clear: both;
+    }
 
-.clear {
-  float: none;
-  clear: both;
-}
+    .rating {
+        width: 90px;
+        unicode-bidi: bidi-override;
+        direction: rtl;
+        text-align: center;
+        position: relative;
+    }
 
-.rating {
-    width: 90px;
-    unicode-bidi: bidi-override;
-    direction: rtl;
-    text-align: center;
-    position: relative;
-}
+    .rating > label {
+        float: right;
+        display: inline;
+        padding: 0;
+        margin: 0;
+        position: relative;
+        width: 1.1em;
+        cursor: pointer;
+        color: #000;
+    }
 
-.rating > label {
-    float: right;
-    display: inline;
-    padding: 0;
-    margin: 0;
-    position: relative;
-    width: 1.1em;
-    cursor: pointer;
-    color: #000;
-}
+    .rating > label:hover,
+    .rating > label:hover ~ label,
+    .rating > input.radio-btn:checked ~ label {
+        color: transparent;
+    }
 
-.rating > label:hover,
-.rating > label:hover ~ label,
-.rating > input.radio-btn:checked ~ label {
-    color: transparent;
-}
-
-.rating > label:hover:before,
-.rating > label:hover ~ label:before,
-.rating > input.radio-btn:checked ~ label:before,
-.rating > input.radio-btn:checked ~ label:before {
-    content: "\2605";
-    position: absolute;
-    left: 0;
-    color: #FFD700;
-}
+    .rating > label:hover:before,
+    .rating > label:hover ~ label:before,
+    .rating > input.radio-btn:checked ~ label:before,
+    .rating > input.radio-btn:checked ~ label:before {
+        content: "\2605";
+        position: absolute;
+        left: 0;
+        color: #FFD700;
+    }
 
 
 </style>
@@ -98,20 +97,21 @@ try{
   else {
   echo "<br><br><br><br>";
   $i=0;
-  foreach ($result as $row) {
-    $i++;
-    echo "<table>";
-    if ($sid==$row['OWNER_ID']) {
-      if ($row['HIGHEST_BID']==null) {//noone bid
-        $buyerstep='none';
-      }
-      elseif (strlen($row['WINNER_ADDR']) >0) { //winner completed buying process
-        $buyerstep='completed';
+  foreach ($result as $row)
+  {
+      $i++;
+      if ($sid==$row['OWNER_ID']) {
+        if ($row['HIGHEST_BID']==null) {//noone bid
+          $buyerstep='none';
         }
-      elseif (strlen($row['WINNER_ADDR'])==null) {
-        $buyerstep='incomplete';
-      }
+        elseif (strlen($row['WINNER_ADDR']) >0) { //winner completed buying process
+          $buyerstep='completed';
+          }
+        elseif (strlen($row['WINNER_ADDR'])==null) {
+          $buyerstep='incomplete';
+    }
 ?>
+<table class='table table-dark text-center table-striped'>
 <tr>
 <td>
 <?php echo $row['AUCTION_NAME']; ?>
@@ -121,9 +121,9 @@ try{
 if ($buyerstep=='none')
   echo "no bids";
 elseif ($buyerstep=="completed")
-  echo "buying process compelted";
+  echo "Buying Process Completed";
 elseif ($buyerstep=="incomplete")
-  echo "buyng process incomplete";
+  echo "Buyng Process Incomplete";
 
 ?>
 </td>
@@ -172,7 +172,7 @@ echo "<td style='width:60%;'>";
 echo "<select name='winnerAddr' required>";
 
 foreach ($addrResult as $addr) {
-    if (strlen($addr['ADDRESS'])>0) 
+    if (strlen($addr['ADDRESS'])>0)
         echo "<option value='".$addr['ADDRESS']."'>".$addr['ADDRESS']."</option>";
 }
 ?>
@@ -202,7 +202,5 @@ foreach ($addrResult as $addr) {
 ?>
 
 </table>
-
-
 </body>
 </html>
