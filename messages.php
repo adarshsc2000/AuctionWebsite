@@ -77,7 +77,7 @@ try {
             echo "<br>";
           }
           ?>
-          </table>
+        </table>
         </div>
           </br>
           </body>
