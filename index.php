@@ -1,7 +1,7 @@
 <?php require('header.php') ;
 session_start();
 if (!isset($_SESSION['userId']))
-  header('location: reg_loginform.php?error=1');
+  header('location: login_form.php?error=1');
 ?>
 <html>
 <head>
@@ -39,7 +39,7 @@ ajax in messages , start by scrolling to bottom of page <br>
 bugs in profile.php <br>
 republish auction bugs <br>
 validate browse, and all other forms <br>
-ratings.php ? not sure if this was completed 
+ratings.php ? not sure if this was completed
 
 
 <style>
