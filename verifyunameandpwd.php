@@ -11,7 +11,7 @@ if(preg_match($pwdPattern, $password))
 $pwdFlag=true;
 
 if (!($unameFlag&&$pwdFlag)) //validation not done on client side and values!=pattern
-header('location:reg_loginform.php?error=2');
+header('location:login_form.php?error=2');
 else{ //good values, now need to check if they're in DB
   try{
   require('project_connection.php');
@@ -21,8 +21,7 @@ else{ //good values, now need to check if they're in DB
   $conn->execute();
 
   if ($conn->rowCount()==0) {
-      echo $password." fff ".$h_password." fff ".$username;
-      header('location:reg_loginform.php?error=3');
+      header('location:login_form.php?error=3');
   }
   elseif ($conn->rowCount()==1) {
     $row=$conn->fetch();
@@ -35,14 +34,14 @@ else{ //good values, now need to check if they're in DB
       header('location:index.php');
     }
     else {
-      header('location:reg_loginform.php?error=3');
+      header('location:login_form.php?error=3');
     }
   }
   $db =null;
   }
   catch(PDOException $e){ //will say "DB issues" on reg_loginform.php without refreshing
       echo "Error Message ".$e->getMessage();
-      header('location:reg_loginform.php?error=4');
+      header('location:login_form.php?error=4');
 
   }
 }
