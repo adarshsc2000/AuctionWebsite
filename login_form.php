@@ -1,26 +1,57 @@
+<?php
+  require("header_newuser.php");
+?>
 <html>
 <head>
   <script src="reg_loginformvalidation.js" > </script>
+  <style>
+  #login {
+      margin-top:135px;
+      margin-left:auto;
+      margin-right:auto;
+      width:700px;
+      padding:80px;
+      padding-bottom: 25px;
+      padding-top: 40px;
+      border-radius: 5%;
+      border: 5px solid black;
+  }
+  .submit {
+    text-align: center;
+  }
+  .login {
+    font-size: 50px;
+  }
+  </style>
 </head>
 
-<body style='background:#8ee041;'>
-
- <div style="margin-top:50px; margin-left:auto; margin-right:auto; width:700px; border: 2px solid black; padding:5px;">
+<body class='bg-primary'>
+ <div class='bg-secondary text-white container align-items-center' id='login'>
  <noscript><h1><b>Please enable JavaScript or use another browser for better user experience</b></h1></noscript>
 
-  <h2><u>login form</u></h2>
+   <div class="container d-flex align-items-center flex-column">
+       <!-- Masthead Heading-->
+       <h1 class="masthead-heading login">Login</h1>
+       <!-- Icon Divider-->
+       <div class="divider-custom divider-light">
+           <div class="divider-custom-line"></div>
+           <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+           <div class="divider-custom-line"></div>
+       </div>
+   </div>
   <!--login form-->
   <form onSubmit="return checkLoginInputs();" method='post' action='reg_login.php'>
-    <b>username</b> (5-20)
-    <input type='text' name='username' onkeyup="checkUN(this.value,'login_username_msg')" size='20' required><span id='login_username_msg'></span><br>
+    <label><h3>Username: </h3></label>
+    <input class='form-control' type='text' name='username' placeholder="5-20 characters" onkeyup="checkUN(this.value,'login_username_msg')" size='20' required><span id='login_username_msg'></span><br>
 
-    <b>Password</b> ( between 6 to 20 characters which contain at least one numeric digit, one uppercase and one lowercase letter)
-    <input type='password' name='password' onkeyup="checkPWD(this.value,'login_pwd_msg')" size='20' required><span id='login_pwd_msg'></span><br>
+    <label><h3>Password</h3></label>
+    <input class='form-control' placeholder='6 to 20 characters' type='password' name='password' onkeyup="checkPWD(this.value,'login_pwd_msg')" size='20' required><span id='login_pwd_msg'></span><br>
 
     <input type='hidden' name='JSEnabled' value='false'>
-    <input type='submit' name='login_user' value='login'>
+    <input class='btn btn-lg btn-primary submit' type='submit' name='login_user' value='Login'>
 
   </form>
+</br>
     <p>Dont have an account? <b><a href="registration_form.php">Sign up here!</a></b> </p>
  </div>
 <?php
