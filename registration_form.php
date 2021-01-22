@@ -6,6 +6,7 @@
 <body style='background:#8ee041;'>
 
  <div style="margin-top:50px; margin-left:auto; margin-right:auto; width:700px; border: 2px solid black; padding:5px;">
+   <noscript><h1><b>Please enable JavaScript or use another browser for better user experience</b></h1></noscript>
  <!--registration-->
  <h2><u>Registration Form</u></h2>
  <form onSubmit="return checkRegistrationInputs();" method='post' action='reg_login.php'>

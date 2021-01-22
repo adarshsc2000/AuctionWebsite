@@ -44,7 +44,7 @@
 
   if (!($nameFlag&&$emailFlag&&$usernameFlag&&$passwordFlag&&$cnfmpasswordFlag&&$mobileFlag&&$addressFlag))
   //validation not done on client side and values!=pattern
-  header('location:reg_loginform.php?error=2');
+  header('location:registration_form.php?error=2');
   else{ //good values, now need to insert into DB
     try{
     require('project_connection.php');
@@ -86,7 +86,7 @@
     $conn->execute();
     $db->commit();
     if ($conn->rowCount()==0) {
-    header('location:reg_loginform.php?error=4');
+    header('location:registration_form.php?error=4');
     }
     elseif ($conn->rowCount()==1) {
     //successful registration
@@ -101,8 +101,8 @@
     catch(PDOException $e){
       $db->rollBack();
       echo "errorrrr:".$e->getMessage();
-      //will show msg on reg_loginform.php with refreshing + error
-      header('location:reg_loginform.php?error=4');
+      //will show alert on reg_loginform.php with refreshing + error
+      header('location:registration_form.php?error=4');
 
     }
   }
