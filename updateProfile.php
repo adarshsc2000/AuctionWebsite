@@ -5,7 +5,7 @@
 
   session_start();
   if (!isset($_SESSION['userId']))
-    header('location:reg_loginform.php?error=1');
+    header('location:login_form.php?error=1');
 $sid=$_SESSION['userId'];
 
   $nameFlag=$emailFlag=$usernameFlag=$passwordFlag=$cnfmpasswordFlag=$mobileFlag=$addressFlag=$fileUploadFlag=false;
@@ -163,7 +163,7 @@ header('location:profile.php?error=1');
     $db->rollBack();
     echo "error message:".$e->getMessage();
     //will show msg on reg_loginform.php with refreshing + error
-    header('location:reg_loginform.php?error=3');
+    header('location:profile.php?error=3');
 
   }
 

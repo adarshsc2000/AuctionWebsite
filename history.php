@@ -2,7 +2,7 @@
 session_start();
 extract($_GET);
 if(!isset($_SESSION['user_id']))
-	header("Location: login.php");
+	header("Location: login_form.php");
 
 try{
 	require('project_connection.php');
