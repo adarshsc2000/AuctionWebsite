@@ -9,15 +9,13 @@
       margin-top:135px;
       margin-left:auto;
       margin-right:auto;
+      margin-bottom:70px;
       width:700px;
       padding:80px;
       padding-bottom: 25px;
       padding-top: 40px;
       border-radius: 5%;
       border: 5px solid black;
-  }
-  .submit {
-    text-align: center;
   }
   .login {
     font-size: 50px;
@@ -44,7 +42,7 @@
     <label><h3>Username: </h3></label>
     <input class='form-control' type='text' name='username' placeholder="5-20 characters" onkeyup="checkUN(this.value,'login_username_msg')" size='20' required><span id='login_username_msg'></span><br>
 
-    <label><h3>Password</h3></label>
+    <label><h3>Password:</h3></label>
     <input class='form-control' placeholder='6 to 20 characters' type='password' name='password' onkeyup="checkPWD(this.value,'login_pwd_msg')" size='20' required><span id='login_pwd_msg'></span><br>
 
     <input type='hidden' name='JSEnabled' value='false'>

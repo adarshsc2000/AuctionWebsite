@@ -49,7 +49,7 @@
     try{
     require('project_connection.php');
     $h_password=password_hash($password,PASSWORD_DEFAULT);
-    $profilepic='defaultpfp160813439419818483965fda2efae2750.png';
+    $profilepic='default.jpg';
     //$mobile=$country_code.$mobile; will display like that otherwise searching for num becomes difficult in ajax registration
     $sql="INSERT INTO users(USERNAME,PASSWORD,NAME,CONTACT_NUM,EMAIL,COUNTRY,PROFILE_PIC,BUYER_RATING_SUM,BUYER_RATING_COUNT,SELLER_RATING_SUM,SELLER_RATING_COUNT) VALUES (:uname,:hpwd,:name,:mobile,:email,:country,:pfp,:brs, :brc, :srs, :src)";
     $db->beginTransaction();
