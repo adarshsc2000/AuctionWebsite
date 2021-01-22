@@ -21,7 +21,7 @@
     <input type='submit' name='login_user' value='login'>
 
   </form>
-
+    <p>Dont have an account? <b><a href="registration_form.php">Sign up here!</a></b> </p>
  </div>
 <?php
 
