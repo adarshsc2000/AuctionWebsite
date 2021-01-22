@@ -1,6 +1,6 @@
 <html>
 <head>
-  <script> src="reg_loginformvalidation.js" </script>
+  <script src="reg_loginformvalidation.js" > </script>
 </head>
 
 <body style='background:#8ee041;'>
