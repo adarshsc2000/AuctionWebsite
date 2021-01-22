@@ -5,7 +5,7 @@ require('header.php');
 	extract($_POST);
 
 	if(!isset($_SESSION['userId']))
-		header("Location:reg_loginform.php?error=1");
+		header("Location:login_form.php?error=1");
 
 if (!isset($search)) {
 	header("Location: index.php?error=5"); //nothing sent through form
