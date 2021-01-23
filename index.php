@@ -39,7 +39,8 @@ ajax in messages , start by scrolling to bottom of page <br>
 bugs in profile.php <br>
 republish auction bugs <br>
 validate browse, and all other forms <br>
-ratings.php ? not sure if this was completed
+ratings.php ? not sure if this was completed<br>
+header bug (search button below bar)
 
 
 <style>

@@ -55,12 +55,12 @@
     <input class='form-control' type='text' name='username' placeholder="5-20 characters" onkeyup="checkUN(this.value,'reg_username_msg')" size='20' required><span id='reg_username_msg'></span><br>
 
     <label><h3>Password:</h3></label>
-    <input class='form-control' type='password' name='password' placeholder="6-20 characters" onkeyup="checkPWD(this.value,'reg_pwd_msg')" size='20' required><span id='reg_pwd_msg'></span><br>
+    <input class='form-control' type='password' name='password' placeholder="6-20 characters (big and small letters, and numbers)" onkeyup="checkPWD(this.value,'reg_pwd_msg')" size='20' required><span id='reg_pwd_msg'></span><br>
 
     <label><h3>Confirm Password:</h3></label>
     <input class='form-control' type='password' name='cnfm_password' placeholder="6-20 characters" onkeyup="confirmPWD(this.value)" size='20' required><span id='cfmpwd_msg'></span><br>
     <label><h3>Country:</h3></label>
-    <select class='form-control' name="country_code" onchange="checkMBL(document.forms[0].mobile.value)" required >
+    <select class='form-control' name="country_code" onchange="checkMBL(document.forms[1].mobile.value)" required >
       <option value="+973" selected>Bahrain</option>
       <option value="+966">Saudi Arabia</option>
       <option value="+971">United Arab Emirates</option>
@@ -70,7 +70,7 @@
     <input class='form-control' type='text' name='mobile' placeholder="8 digits for Bahrain, 8-10 others" onkeyup="checkMBL(this.value)" size='10' required><span id='mobile_msg'></span><br>
     <label><h3>Address:</h3></label>
     <input class='form-control' type='text' name='address' placeholder="Flat 1 Bldg 100 Road 200 Block 300, Manama, Bahrain" onkeyup="checkAddr(this.value)" size='50' required><span id='addr_msg'></span><br>
-    
+
     <input type='hidden' name='JSEnabled' value='false'>
     <input class='btn btn-lg btn-primary' type='submit' name='register_user' value='Register'>
   </form>

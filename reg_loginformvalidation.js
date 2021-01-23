@@ -60,8 +60,8 @@ function checkPWD(pwd,id) { //check password
   }
   document.getElementById(id).style.color = color;
   document.getElementById(id).innerHTML = msg;
-  if(id=="reg_pwd_msg")
-  confirmPWD(document.forms[0].cnfm_password.value);
+  if(id=="reg_pwd_msg")  //did this cus if user enters a valid passord after entering a valid comfirmation password
+  confirmPWD(document.forms[1].cnfm_password.value);
 }
 
 function confirmPWD(cpassword) { //check 2nd password
@@ -76,8 +76,7 @@ function confirmPWD(cpassword) { //check 2nd password
   }
   else
   {
-    var firstPwd = document.forms[0].password.value;
-
+    var firstPwd = document.forms[1].password.value;
     if (firstPwd.length==0) {
       msg="";
       cnfmpasswordFlag=false;
@@ -100,13 +99,13 @@ function confirmPWD(cpassword) { //check 2nd password
 }
 
 function checkMBL(mobile) {  //check mobile num
-  if (document.forms[0].country_code.value=='+973') {
+  if (document.forms[1].country_code.value=='+973') {
     var numExp= /^(17|32|33|34|35|36|37|38|39)[0-9]{6}$/;
   }
-  else if (document.forms[0].country_code.value=='+966') {
+  else if (document.forms[1].country_code.value=='+966') {
     var numExp= /^(54|56|57|58|59)[0-9]{6,8}$/;
   }
-  else if(document.forms[0].country_code.value=='+971') {
+  else if(document.forms[1].country_code.value=='+971') {
     var numExp= /^(50|52|54|55|56|58)[0-9]{6,8}$/;
   }
   if (mobile.length == 0) {
@@ -231,7 +230,7 @@ mobileFlag=false;
 }
 
 function checkRegistrationInputs(){
-  document.forms[0].JSEnabled.value="TRUE";
+  document.forms[1].JSEnabled.value="TRUE";
   return (nameFlag&&usernameFlag&&passwordFlag&&cnfmpasswordFlag&&mobileFlag&&addressFlag&&emailFlag);
 }
 

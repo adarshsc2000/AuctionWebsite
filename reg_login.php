@@ -1,12 +1,12 @@
   <?php
   require("noCache.php");
   extract($_POST);
-  if (isset($login_user)&&$login_user=='login') {//form submited and wants to login
+  if (isset($login_user)&&$login_user=='Login') {//form submited and wants to login
     //send details to verifyunameandpwd.php again as user could disable scripting
     $url="verifyunameandpwd.php?username=".$username."&password=".$password;
     header('location:'.$url);
   }
-  elseif (isset($register_user)&&$register_user=='register') {
+  elseif (isset($register_user)&&$register_user=='Register') {
   $nameFlag=$emailFlag=$usernameFlag=$passwordFlag=$cnfmpasswordFlag=$mobileFlag=$addressFlag=false;
   $namePattern ='/^([a-z]+\s)*[a-z]+$/i';
   $mailPattern ='/^[a-zA-Z0-9._-]+@([a-zA-Z0-9-]+\.)+[a-zA-Z.]{2,5}$/';
