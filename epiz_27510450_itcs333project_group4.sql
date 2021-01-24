@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.0.1
+-- version 5.0.2
 -- https://www.phpmyadmin.net/
 --
--- Host: sql204.epizy.com
--- Generation Time: Jan 20, 2021 at 06:00 AM
--- Server version: 5.6.48-88.0
--- PHP Version: 7.2.22
+-- Host: 127.0.0.1
+-- Generation Time: Jan 22, 2021 at 10:18 PM
+-- Server version: 10.4.14-MariaDB
+-- PHP Version: 7.4.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -81,7 +80,25 @@ INSERT INTO `addresses` (`ADDRESS_ID`, `USER_ID`, `ADDRESS`) VALUES
 (49, 18, ''),
 (55, 19, ''),
 (54, 19, ''),
-(53, 19, '31 sti');
+(53, 19, '31 sti'),
+(56, 20, 'bahrain, muharraq'),
+(57, 20, ''),
+(58, 20, ''),
+(59, 21, 'bahrain, salmadabad'),
+(60, 21, ''),
+(61, 21, ''),
+(62, 22, 'bahrain, salmadabad'),
+(63, 22, ''),
+(64, 22, ''),
+(65, 23, 'bahrain, Isa Town'),
+(66, 23, ''),
+(67, 23, ''),
+(68, 24, 'bahrain, manama'),
+(69, 24, ''),
+(70, 24, ''),
+(71, 25, 'bahrain, Hamad Town'),
+(72, 25, ''),
+(73, 25, '');
 
 -- --------------------------------------------------------
 
@@ -108,19 +125,11 @@ CREATE TABLE `auctions` (
 --
 
 INSERT INTO `auctions` (`AUCTION_ID`, `OWNER_ID`, `AUCTION_NAME`, `DESCRIPTION`, `START_TIME_DATE`, `END_TIME_DATE`, `START_PRICE`, `HIGHEST_BID`, `WINNER_ID`, `WINNER_ADDR`, `STATUS`) VALUES
-(1, 2, 'Henry Koehler (American, 1927 - 2018) \"Blue and Pi', 'Henry Koehler (American, 1927 - 2018)\"Blue and Pink Jockey, Below, 1973\"oil on canvassigned, dated and titled Henry Koehler lower right verso24\" x 20\"', '2020-12-20 20:19:00', '2021-01-01 20:20:00', '8.000', '10.000', 8, '', 'pending'),
-(2, 1, 'Early 20th C. Thai Iron Dha Sword w/ Painted Sheat', '100% of the Buyer\'s Premium of all lots sold in this auction will be donated to Community Food Share by Artemis Gallery. $1.00 = 3 meals!\r\n\r\n**First T', '2020-12-20 20:27:00', '2021-01-20 20:27:00', '100.000', '275.000', 19, '', NULL),
-(3, 1, '1909-S LINCOLN CENT', 'PCGS XF-40 KEY COIN! ESTIMATE: $200-$300', '2020-12-20 20:31:00', '2021-01-04 20:32:00', '122.999', '230.000', 14, '', NULL),
-(4, 3, 'Laurel Lamp Manufacturing Mushroom Table Lamp', 'Metal fluted base, felted bottom detached. Untested, measures 17x12 inches.', '2020-12-20 20:37:00', '2021-01-05 20:37:00', '64.998', '75.000', 8, '', NULL),
-(5, 4, 'Linden German Mantel clock', 'Made by Cuckoo Clock May in West Germany unadjusted. Stamped 1050-020, measures 8.25x12x5.25 inches.', '2020-12-20 20:42:00', '2021-01-06 08:42:00', '84.999', '200.000', 12, '', NULL),
-(6, 5, 'Navajo vintage silver & bear claw necklace w/ turq', 'A rare Navajo vintage silver and bear claw necklace with turquoise, total 12 claws, wt. 306gm', '2020-12-20 08:45:00', '2020-12-20 20:51:00', '999.999', '1000.000', 1, '', 'pending'),
-(7, 6, 'Hermes Birkin 30 Veau Togo Geranium Red Vermillon', 'Product details: Gold-plated hardware. Dual rolled top handles. Protective feet at base. Gold foil-stamped logo at flap underside. Leather lining. Dua', '2020-12-20 20:57:00', '2020-12-20 20:59:00', '56.000', '70.000', 7, '', 'pending'),
-(8, 5, 'ICONIC VINTAGE ALEXANDER MCQUEEN MINK FUR Coat 40', 'ALEXANDER MCQUEEN MINK FUR COAT Relaxed fit Two pockets Knee length Content: 100% mink fur IT 40 - US 4/6 shoulder to shoulder 18\" armpit to armpit 18', '2020-12-20 09:02:00', '2020-12-31 21:03:00', '20.000', '40.000', 12, '', 'pending'),
-(9, 2, 'Rolex Mens 18K Yellow Gold Black Diamond Quickset', 'One Mens Quickset Rolex Day Date 18K Yellow Gold President Polished, Serviced & Electronically Tested, 18K Yellow Gold Case: 36mm, 18K Yellow Gold Cro', '2020-12-20 09:07:00', '2020-12-30 21:08:00', '999.999', '1001.000', 9, '', 'pending'),
-(10, 1, 'Generous Lot of Seiko Watches.', 'lot includes Seiko automatic 33 jewels (6106-5480)…SEIKO BELL MATIC 17 JEWELS (4006-6027 ) Seiko Sports 100 ( H556-5029) …Seiko Automatic 19 Jewels ( ', '2020-12-20 09:12:00', '2020-12-29 09:12:00', '1999.900', '2006.000', 11, '', 'pending'),
-(11, 3, 'Gustav Stickley Hall Seat Model No. 182', 'Gustav Stickley (American, 1858-1952) Hall Seat, model number 182, circa 1901-1903, oak bench / settee with lift top seat opening to reveal storage, m', '2020-12-20 09:15:00', '2020-12-20 21:24:00', '78.899', '90.000', 4, '', 'pending'),
-(12, 11, 'Cat ', 'Her name is mia .she\'s so adorable ', '2020-12-23 20:30:00', '2020-12-24 15:15:00', '50.000', '57.000', 1, '', 'pending'),
-(13, 19, 'shoe', 'Black', '2020-12-31 23:17:00', '2020-12-31 23:17:00', '25.000', NULL, NULL, '', 'pending');
+(17, 4, 'Mannat', 'Shah Rukh Khan\'s House.', '2021-01-22 12:36:00', '2021-03-22 12:36:00', '5838278.790', NULL, NULL, '', NULL),
+(16, 3, ' Corgeut  Watch', '41MM Corgeut Sapphire Black Bay black dial blue bezel Men miyota Automatic Watch', '2021-01-23 00:00:00', '2021-01-23 23:59:00', '40.000', NULL, NULL, '', NULL),
+(18, 20, 'Early Chinese antiques', 'Chinese collectors buying antiques and collectibles, and with prices heating up on artwork and antiques created in other Asian countries', '2021-01-23 00:04:00', '2021-01-23 00:10:00', '60.000', '80.000', 21, '', NULL),
+(15, 2, 'Porsche 911', 'Porsche 911 is a two-door, 2+2 high performance rear-engined sports car. It has a rear-mounted flat-six engine and all round independent suspensio', '2021-01-23 00:00:00', '2021-01-24 00:00:00', '36900.000', NULL, NULL, '', NULL),
+(14, 1, 'iphone 12', 'Awesome Camera\r\nGood Quality', '2021-01-22 01:10:00', '2021-01-31 01:11:00', '300.000', '350.000', 20, '', NULL);
 
 -- --------------------------------------------------------
 
@@ -133,7 +142,7 @@ CREATE TABLE `messages` (
   `AUCTION_ID` int(11) NOT NULL,
   `MESSAGE` varchar(100) NOT NULL,
   `USER_ID` int(11) NOT NULL,
-  `time` datetime NOT NULL
+  `MESSAGE_TIME` datetime NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -165,7 +174,15 @@ INSERT INTO `pictures` (`PICTURE_ID`, `AUCTION_ID`, `PICTURE`) VALUES
 (10, 10, 'uploadedfiles/img16084879791662514595fdf942b47301.jpg'),
 (11, 11, 'uploadedfiles/img160848821410787470705fdf9516d2346.jpg'),
 (12, 12, 'uploadedfiles/img160874475816340665145fe37f3634361.jpg'),
-(13, 13, 'uploadedfiles/img16094458866777119205fee31fe8b381.jpg');
+(13, 13, 'uploadedfiles/img16094458866777119205fee31fe8b381.jpg'),
+(14, 14, 'uploadedfiles/img161126359712800157086009ee6d6a950.jpg'),
+(15, 15, 'uploadedfiles/img161126385721425931376009ef71a1cab.jpg'),
+(16, 16, 'uploadedfiles/img161126447219218748106009f1d8bf575.jpg'),
+(17, 16, 'uploadedfiles/img16112644728000284446009f1d8c0091.jpg'),
+(18, 16, 'uploadedfiles/img161126447220966571186009f1d8c1cda.jpg'),
+(19, 17, 'uploadedfiles/img161126507318578368306009f4314614c.jpg'),
+(20, 17, 'uploadedfiles/img161126507313510703356009f43146d72.jpg'),
+(21, 18, 'uploadedfiles/img1611349363189977006600b3d7341e90.jpg');
 
 -- --------------------------------------------------------
 
@@ -187,7 +204,8 @@ CREATE TABLE `questions` (
 INSERT INTO `questions` (`QUESTION_ID`, `AUCTION_ID`, `QUESTION`, `ANSWER`) VALUES
 (1, 5, 'Sealed it ?', NULL),
 (2, 2, 'ayyy', NULL),
-(3, 2, 'can i use this for self defense \r\n', NULL);
+(3, 2, 'can i use this for self defense \r\n', NULL),
+(4, 14, 'how much gb space is there in the phone?', '256 gb');
 
 -- --------------------------------------------------------
 
@@ -220,21 +238,12 @@ INSERT INTO `users` (`USER_ID`, `USERNAME`, `PASSWORD`, `NAME`, `CONTACT_NUM`, `
 (2, 'ashraf', '$2y$10$F7wj7EragiZJ7eqz7T7kuO.FnjP/BldcKg/q5OE3.K65sVKHT7/P.', 'Ashraf Haris', 38127823, 'ashraf123@gmail.com', 'Bahrain', 'bahrain ,muharraq', 'picWhatsApp Image 2020-12-20 at 616084886446723304215fdf96c4b9c9a.jpeg', 0, 0, 0, 0),
 (3, 'adarsh', '$2y$10$UyLEN7em66GDvio8pNVMO.aTasvy/M5dgdSfJ54kCpxRhGJAL1sT.', 'Adarsh Chandran', 35399797, 'adarsh123@gmail.com', 'Bahrain', 'bahrain ,manama', 'picWhatsApp Image 2020-12-20 at 916084899419833366215fdf9bd54347f.jpeg', 0, 0, 0, 0),
 (4, 'tahmid', '$2y$10$ejhokIyGwKAAF27Vyh3P0OzofwlkHJ.gX466UEKOZwVkOynmKxr9C', 'tahmidurrahman', 35399796, 'thahmid123@gmail.com', 'Bahrain', 'bahrain ,muharraq', 'picWhatsApp Image 2020-12-20 at 9160848998510920530505fdf9c010c8f8.jpeg', 0, 0, 0, 0),
-(5, 'reema', '$2y$10$v4aEt4E8ha0q9bPTpGLco.0BugXtUkwmSZwYVFj8EoTiS7goHG1pW', 'Reema shaikh', 35399799, 'reema123@gmail.com', 'Bahrain', 'bahrain ,manama', 'picreema160849005720696333265fdf9c492d10a.jpg', 0, 0, 0, 0),
-(6, 'ansab', '$2y$10$dHO8eea9MDNwLkkbj4iJguI1QrTsWzLbB3QgS4Ffy0bVWzJ6C6osS', 'Muhammed ansab', 35399790, 'ansab@gmail.com', 'Bahrain', 'bahrain ,muharraq', 'picansab160849025211472657445fdf9d0c7646a.jpg', 0, 0, 0, 0),
-(7, 'haris', '$2y$10$4mLHmTsXV8wpu8w1G.Dv8.0lDT3LY/.YPwnnCg/NgQbRapQo1Zhzu', 'Muhammed Haris', 35099793, 'haris123@gmail.com', 'Bahrain', 'bahrain,salmabad', 'picharis160849030914720998425fdf9d45988d4.jpg', 0, 0, 0, 0),
-(8, 'shanib', '$2y$10$Xp.UOvZnb2uzNf7FP3QMCOB1cVU9g0Wkt568/iXB1WdbljS.sIb/a', 'Shanib ibrahim', 35399890, 'shanib123@gmail.com', 'Bahrain', 'bahrain,salmabad', 'picshanib16084904258464805705fdf9db910f9c.jpg', 0, 0, 0, 0),
-(9, 'aseeb', '$2y$10$//wtlnkSOwKDQh6SzcgzYOc8MfZon4nlQmp8pgR9kd4WUD5g1yJG6', 'aseeb ibrahim', 35399745, 'adam234@gmail.com', 'Bahrain', 'bahrain,salmabad', 'picaseeb160849046915555301655fdf9de5b6d20.jpg', 0, 0, 0, 0),
-(10, 'fathima', '$2y$10$eKESsW50pFFK6Uz1.RTyGu55TrH4L.Il.BWd3Pg.ZFkL1dtG7LFAC', 'Fathima abbas', 35399756, 'fathima345@gmail.com', 'Bahrain', 'bahrain ,salmaniya', 'picfathima160848944917764233075fdf99e90a3a7.jpg', 0, 0, 0, 0),
-(11, 'Hasib', '$2y$10$QFqjDOjDxehuudtF6mkpjuYlsXq6EZUetVPydHCyJ6IYl6zeewbkK', 'Hasib', 35399700, 'Hazib7@gmail.com', 'Bahrain', '', 'defaultpfp160813439419818483965fda2efae2750.png', 0, 0, 0, 0),
-(12, 'reemanawaz8', '$2y$10$EdiHNIXsbNuSyNafFAVus.yl2rUZSajOccqpC1YqlINFxIH1bG7I.', 'Reema Nawaz', 38079532, 'shaikh-reema8@hotmail.com', 'Bahrain', '', 'defaultpfp160813439419818483965fda2efae2750.png', 0, 0, 0, 0),
-(13, 'bargoooo', '$2y$10$atJBLKhNije20Jo7YHb38.CPw12PTt2CVUJU/WEUhmY1m2UGVC/2S', 'Ebrahim Khalil', 36884464, 'ebrahim_alhamar@hotnail.com', 'Bahrain', '', 'defaultpfp160813439419818483965fda2efae2750.png', 0, 0, 0, 0),
-(14, 'AliZubair', '$2y$10$Af8u6bpOqwOy2q0NCVQjp.61DY54eBJa3bxClu1Vuut6ggbrGMqY6', 'Ali', 39876317, 'ali293.ma@gmail.com', 'Bahrain', '', 'defaultpfp160813439419818483965fda2efae2750.png', 0, 0, 0, 0),
-(15, 'mk180898', '$2y$10$qzZrQxBq1UOeZ040oxdc8eZt96zYkPNwhHRaAQUrn5TnxfRIC3AUe', 'mohamed', 37777777, 'mk180898@gmail.com', 'Bahrain', '', 'defaultpfp160813439419818483965fda2efae2750.png', 0, 0, 0, 0),
-(16, 'F3hoom', '$2y$10$mJ7olpSalLuhiyg7yHlHju20oU3NTNZEwiFfwiXtBqJY7ebqXnB1q', 'Fahima suman', 33333333, 'Fahima123@gmail.com', 'Bahrain', '', 'defaultpfp160813439419818483965fda2efae2750.png', 0, 0, 0, 0),
-(17, '20188776', '$2y$10$aATkvAFYVX1Q4D4fKgZlh.d.82qziJhezPqSr5C0IhEqSxTo/xpri', 'Jannat', 39876677, 'jannnaaathmed375@gmail.com', 'Bahrain', '', 'defaultpfp160813439419818483965fda2efae2750.png', 0, 0, 0, 0),
-(18, 'Abdaal', '$2y$10$OlRdzuQRBvsbkBtVCZocTOXlKfc0Lt4hhNVbOOKHJWUdWxF1aoLUu', 'Abdaal', 35102706, 'Ab@gmail.com', 'Bahrain', '', 'defaultpfp160813439419818483965fda2efae2750.png', 0, 0, 0, 0),
-(19, 'Aj12345678', '$2y$10$8jYwfpbE6gGCTNo3v.lLvuFZDnyaszsu.GVn70Z1ePpRS9pgNVM8y', 'aman', 37246969, 'aj7@gmail.com', 'Bahrain', '', 'defaultpfp160813439419818483965fda2efae2750.png', 0, 0, 0, 0);
+(25, 'usama_tahir', '$2y$10$Elxz61nE5QVQG/wfTTEWWeo6DXgntyxFDoPzVeUZzGsppRids/EUm', 'Usama', 36894512, 'usamatahir222@gmail.com', 'Bahrain', '', 'defaultpfp160813439419818483965fda2efae2750.png', 0, 0, 0, 0),
+(24, 'mark_henry', '$2y$10$w0yyARq/Lx407ZQDhVuPHOeGmA6zZXwemtdB1M.KXvilMKRhDMIsa', 'Mark', 38765432, 'markhenryishere@gmail.com', 'Bahrain', '', 'defaultpfp160813439419818483965fda2efae2750.png', 0, 0, 0, 0),
+(23, 'steve_austin', '$2y$10$7BiXASnwr3gkUGrFNDG0wOzh5ox.ayVgmOes6tA/1aEEp3B1RcBUG', 'Steve', 38383737, 'steveaustin316@hotmail.com', 'Bahrain', '', 'defaultpfp160813439419818483965fda2efae2750.png', 0, 0, 0, 0),
+(22, 'viper_orton', '$2y$10$LwQi4kUkDb8CGaGKk9DzUuuQP5Je7fBHwUfjf23OmdWAZ/QdzcKXO', 'Orton', 32112345, 'ortonisman@gmail.com', 'Bahrain', '', 'defaultpfp160813439419818483965fda2efae2750.png', 0, 0, 0, 0),
+(21, 'elon_musk_1', '$2y$10$UExt9/4Isws1bTPaD7kNVu.3MzRHe6t8OQ0oO1TdObYNTpeBqQVAS', 'Elon', 33445577, 'elonmuskishere@gmail.com', 'Bahrain', '', 'defaultpfp160813439419818483965fda2efae2750.png', 0, 0, 0, 0),
+(20, 'anthony_123', '$2y$10$rW0PRZ4VNwYIXl5baX2z0eR/Qk3rsU0reiA27nvABtAba/RgmlFK.', 'Anthony', 39938998, 'anthonymkv@gmail.com', 'Bahrain', '', 'defaultpfp160813439419818483965fda2efae2750.png', 0, 0, 0, 0);
 
 --
 -- Indexes for dumped tables
@@ -294,13 +303,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `addresses`
 --
 ALTER TABLE `addresses`
-  MODIFY `ADDRESS_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=56;
+  MODIFY `ADDRESS_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=74;
 
 --
 -- AUTO_INCREMENT for table `auctions`
 --
 ALTER TABLE `auctions`
-  MODIFY `AUCTION_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `AUCTION_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT for table `messages`
@@ -312,19 +321,19 @@ ALTER TABLE `messages`
 -- AUTO_INCREMENT for table `pictures`
 --
 ALTER TABLE `pictures`
-  MODIFY `PICTURE_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `PICTURE_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT for table `questions`
 --
 ALTER TABLE `questions`
-  MODIFY `QUESTION_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `QUESTION_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `USER_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `USER_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
