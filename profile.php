@@ -39,6 +39,41 @@ try{
 
 ?>
 <head>
+
+<?php //changes i made ?>
+    <style>
+    #profile {
+        margin-top:135px;
+        margin-left:auto;
+        margin-right:auto;
+        width:800px;
+        padding:80px;
+        padding-bottom: 25px;
+        padding-top: 40px;
+        border-radius: 5%;
+        border: 5px solid black;
+    }
+    .submit {
+      text-align: center;
+    }
+    .profile {
+      font-size: 25px;
+    }
+    .form-control {
+      font-size: 20px;
+      font-weight: bolder;
+    }
+    .form-control::placeholder {
+      font-weight: 50;
+    }
+    .profile-pic{
+      width:200px;
+      height:200px;
+      align-self: auto;
+    }
+    </style>
+<?php //changes i made ?>
+
   <script>
 <?php
 echo "username='".$username."'\n";
@@ -321,29 +356,41 @@ MAX_FILE_SIZE=5000000;   //5MB
     }
   </script>
 </head>
-<body>
-  <div style="margin-top:50px; margin-left:auto; margin-right:auto; width:700px;">
+<body class='bg-primary'>
+  <div class='bg-secondary text-white container align-items-center' id='profile'>
+  <noscript><h1><b>Please enable JavaScript or use another browser for better user experience</b></h1></noscript>
+
+    <div class="container d-flex align-items-center flex-column">
+        <!-- Masthead Heading-->
+        <h1 class="masthead-heading login">Profile Details</h1>
+        <!-- Icon Divider-->
+        <div class="divider-custom divider-light">
+            <div class="divider-custom-line"></div>
+            <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+            <div class="divider-custom-line"></div>
+        </div>
+    </div>
+
   <form onSubmit="return checkeditedInputs();" method='post' action='updateProfile.php'  enctype="multipart/form-data">
-    <img src='uploadedfiles/<?php echo $profile_pic; ?>' alt='profilepic' width='150' height='150' ><br>
+    <img src='uploadedfiles/<?php echo $profile_pic; ?>'  class= 'profile-pic' alt='profilepic' >
+    <input type="file" name="picfile" id='fileUpload'><span>images<=5MB</span><br><br>
 
-    <input type="file" name="picfile" id='fileUpload'><span>images<=5MB</span><br>
+    <label><h3>Name:</h3></label>
+    <input class='form-control' type='text' name='name' placeholder="maximum 50 characters" onkeyup="checkFN(this.value)" size='50' value='<?php echo $name; ?>' required><span id='name_msg'></span><br>
 
-    Name (max 50 char)
-    <input type='text' name='name' onkeyup="checkFN(this.value)" size='50' value='<?php echo $name; ?>' required><span id='name_msg'></span><br>
+    <label><h3>Email:</h3></label>
+    <input class='form-control' type='text' name='email' placeholder="abc@example.com (30 characters max)" onkeyup="checkMAIL(this.value)" size='30' value='<?php echo $email; ?>' required><span id='mail_msg'></span><br>
 
-    Email
-    <input type='text' name='email' onkeyup="checkMAIL(this.value)" size='30' value='<?php echo $email; ?>' required><span id='mail_msg'></span><br>
+    <label><h3>Username:</h3></label>
+    <input class='form-control' type='text' name='username' placeholder="5-20 characters" onkeyup="checkUN(this.value)" size='20' value='<?php echo $username; ?>' required><span id='reg_username_msg'></span><br>
 
-    Username
-    <input type='text' name='username' onkeyup="checkUN(this.value)" size='20' value='<?php echo $username; ?>' required><span id='reg_username_msg'></span><br>
+    <label><h3>Password:</h3></label>
+    <input class='form-control' type='password' name='password' placeholder='Leave empty to retain original password' onkeyup="checkPWD(this.value)" size='20' value=''  style="width:250px;"><span id='reg_pwd_msg'></span><br>
 
-    Password (6-20 char which contain at least one numeric digit, one uppercase and one lowercase letter)
-    <input type='password' name='password' onkeyup="checkPWD(this.value)" size='20' value='' placeholder='Leave empty to retain original password' style="width:250px;"><span id='reg_pwd_msg'></span><br>
-
-    Confirm password
-    <input type='password' name='cnfm_password' onkeyup="confirmPWD(this.value)" size='20' value=''><span id='cfmpwd_msg'></span><br>
-  Mobile number
-    <select name="country_code" onchange="checkMBL(document.forms[0].mobile.value)" required >
+    <label><h3>Confirm Password:</h3></label>
+    <input class='form-control' type='password' name='cnfm_password' placeholder="6-20 characters" onkeyup="confirmPWD(this.value)" size='20' value=''><span id='cfmpwd_msg'></span><br>
+  <label><h3>Mobile Number:</h3></label>
+    <select  name="country_code" onchange="checkMBL(document.forms[0].mobile.value)" required >
     <?php
     if ($country=="Bahrain") {
       ?>
@@ -368,15 +415,15 @@ MAX_FILE_SIZE=5000000;   //5MB
     }
     ?>
     </select>
-    <input type='text' name='mobile' onkeyup="checkMBL(this.value)" size='10' value='<?php echo $contact_num; ?>' required><span id='mobile_msg'></span><br>
-    address 1
-    <input type='text' name='address1' onkeyup="checkAddr(this.value)" size='50' value='<?php echo $userAddrs[0]['ADDRESS']; ?>' required><span id='addr_msg'></span><br>
-    address 2
-    <input type='text' name='address2' onkeyup="checkAddr(this.value)" size='50' value='<?php echo $userAddrs[1]['ADDRESS']; ?>'><span id='addr_msg'></span><br>
-    address 3
-    <input type='text' name='address3' onkeyup="checkAddr(this.value)" size='50' value='<?php echo $userAddrs[2]['ADDRESS']; ?>'><span id='addr_msg'></span><br>
+    <input class='form-control' type='text' name='mobile' onkeyup="checkMBL(this.value)" size='10' value='<?php echo $contact_num; ?>' required><span id='mobile_msg'></span><br>
+    <label><h3>Address1:</h3></label>
+    <input class='form-control' type='text' name='address1' placeholder="Flat 1 Bldg 100 Road 200 Block 300, Manama, Bahrain" onkeyup="checkAddr(this.value)" size='50' value='<?php echo $userAddrs[0]['ADDRESS']; ?>' required><span id='addr_msg'></span><br>
+    <label><h3>Address2:</h3></label>
+    <input class='form-control' type='text' name='address2' onkeyup="checkAddr(this.value)" size='50' value='<?php echo $userAddrs[1]['ADDRESS']; ?>'><span id='addr_msg'></span><br>
+    <label><h3>Address3:</h3></label>
+    <input class='form-control' type='text' name='address3' onkeyup="checkAddr(this.value)" size='50' value='<?php echo $userAddrs[2]['ADDRESS']; ?>'><span id='addr_msg'></span><br>
     <input type='hidden' name='JSEnabled' value='false'>
-    <input type='submit' name='edit_user' value='Edit'>
+    <input class='btn btn-lg btn-primary' type='submit' name='edit_user' value='Edit'>
   </form>
 
   </div>
