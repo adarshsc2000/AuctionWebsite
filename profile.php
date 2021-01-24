@@ -373,7 +373,7 @@ MAX_FILE_SIZE=5000000;   //5MB
 
   <form onSubmit="return checkeditedInputs();" method='post' action='updateProfile.php'  enctype="multipart/form-data">
     <img src='uploadedfiles/<?php echo $profile_pic; ?>'  class= 'profile-pic' alt='profilepic' >
-    <input type="file" name="picfile" id='fileUpload'><span>images<=5MB</span><br><br>
+    <input type="file" name="picfile" id='fileUpload'><span> images<=5MB</span><br><br>
 
     <label><h3>Name:</h3></label>
     <input class='form-control' type='text' name='name' placeholder="maximum 50 characters" onkeyup="checkFN(this.value)" size='50' value='<?php echo $name; ?>' required><span id='name_msg'></span><br>
